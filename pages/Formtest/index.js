@@ -51,10 +51,11 @@ export default function PageWithJSbasedForm() {
  
      
       // We pass the event to the handleSubmit() function on submit.  
+    
       <form className={style.form} onSubmit={handleSubmit}>
-        <Title />
-        <Background />
-        <label htmlFor="product">Product:</label>
+        
+      
+        <label htmlFor="product">Product</label>
         <input className={style.product} type="text" id="product" name="product" placeholder="krantenknipsel" required  />
         <br />
         <label htmlFor="price">Price:</label>
@@ -63,7 +64,7 @@ export default function PageWithJSbasedForm() {
 
         <label htmlFor="vat">BTW:</label>
           <select id="vat" className={style.vat} name="vat" required>
-            <option value="" disabled selected>Select your option</option>
+            <option value="">Select your option</option>
             <option value="0">0%</option>
             <option value="9">9%</option>
             <option value="21">21%</option>
@@ -72,32 +73,28 @@ export default function PageWithJSbasedForm() {
 
         <label htmlFor="vat">Type:</label>
           <select id="type" className={style.type} name="type" required>
-            <option value="" disabled selected>Select your option</option>
+            <option value="">Select your option</option>
             <option value="Inkomsten">Inkomsten</option>
             <option value="Uitgave">Uitgave</option>
           </select>
         <br />
 
-        <label for="file">Select a file or image:</label>
+        <label htmlFor="file">Select a file or image:</label>
         <input type="file" id="file" name="file" className={style.file}></input>
         <br />
 
         <label htmlFor="who">Who:</label>
         <br />
             <input className={style.who} type="radio" id="evander" name="who" value="Evander Hobbs" required />
-            <label for="evander">evander</label>
+            <label htmlFor="evander">evander</label>
          
             <input className={style.who} type="radio" id="max" name="who" value="Max van Dorst" required />
-            <label for="max">max</label>
-          
-
-
-
+            <label htmlFor="max">max</label>
+    
         <br />
         <button type="submit">Submit</button>
-      </form>
-      
+     </form>
     )
-    
+     
   }
   
