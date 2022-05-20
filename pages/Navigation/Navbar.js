@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import Image from 'next/image'
+import Avatar from './Avatar';
 
 export const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -18,17 +19,18 @@ export const Navbar = () => {
           <Image
       src={"/PhaseLogo.png"}
       alt="Picture of the author"
-      width="150px"
-      height="100px"
+      width="100px"
+      height="50px"
     />
+  
     
             <span className='text-xl text-black font-bold uppercase tracking-wide'>
-              Administratie
+            
             </span>
           </a>
         </Link>
         <button
-          className=' inline-flex p-3 hover:bg-green-600 rounded lg:hidden text-white ml-auto hover:text-white outline-none'
+          className=' inline-flex p-3 rounded lg:hidden text-black ml-auto hover:text-blue-400 outline-none'
           onClick={handleClick}
         >
           <svg
@@ -63,6 +65,11 @@ export const Navbar = () => {
                 inkomsten
               </a>
             </Link>
+            <Link href='/Login'>
+              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-black hover:text-white'>
+                login (later weg)
+              </a>
+            </Link>
             <Link href='/'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-black hover:text-white'>
                 uitgaven
@@ -73,13 +80,18 @@ export const Navbar = () => {
                 totaal
               </a>
             </Link>
-            <Link href='/'>
+            <Link href='/Formtest'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-black hover:text-white'>
                 invoeren
               </a>
             </Link>
+            
           </div>
+          
         </div>
+        <br>
+        </br>
+        < Avatar />
       </nav>
     </>
   );

@@ -3,6 +3,7 @@ import {Navbar} from "./Navigation/Navbar";
 import Head from 'next/head';
 import Kas from "../components/Widgets/Kas";
 import Tablehome from "../components/Widgets/Tablehomepage";
+import Cards from "../components/Widgets/Cards";
 
 export default function Home() {
   return (
@@ -15,6 +16,9 @@ export default function Home() {
       < Navbar />
       < Kas />
       < Tablehome />
+      < Cards />
+      
+      
       <div>Hello World</div>
     </div>
   );
