@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 
     // insert it into the database
     await mysql.query(
-      `INSERT INTO transactions (id, product, prijs, BTW, Type) VALUES (NULL, '${req.body.product}', '${parseFloat(req.body.price)}', '${parseInt(req.body.vat)}', '${req.body.type}');`
+      `INSERT INTO transactions (id, product, prijs, BTW, Type,date,catagory) VALUES (NULL, '${req.body.product}', '${parseFloat(req.body.price)}', '${parseInt(req.body.vat)}', '${req.body.type}',CURDATE(),'${req.body.catagory}');`
     );
     res.status(200).send(req.body);
   } else {

@@ -1,7 +1,7 @@
 import {Navbar} from "./Navigation/Navbar";
 
 import Head from 'next/head';
-import Kas from "../components/Widgets/Kas";
+import Kas from "../components/Widgets/kas";
 import Tablehome from "../components/Widgets/Tablehomepage";
 import Cards from "../components/Widgets/Cards";
 
