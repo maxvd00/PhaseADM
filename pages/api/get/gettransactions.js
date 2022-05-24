@@ -4,35 +4,45 @@ import WooCommerce from "../../../lib/woocomerce"
 export default async function getTransactions(query){
     const ResultsLimit = query.limit ? parseInt(query.limit) : 10
 
-    let transactions = [];
-    
-    // const transactionsPhase = await mysql.query(`select * from transactions limit ${ResultsLimit}`)
+    let transactionsPhase = await mysql.query(`select * from transactions limit ${ResultsLimit}`)
 
-    // transactions.forEach(element => {
-    //     element.provider = "PhaseADM"
-    // });
+    transactionsPhase.push(transactionsPhase)
 
-    // transactions.push(transactionsPhase)
-    
+    transactionsPhase.forEach(element => {
+        element.product = [element.product]
+        element.provider = "PhaseADM"
+    });
 
-    const WooCommerceTransactions = await WooCommerce.get("orders",{per_page:1000})
-    console.log(WooCommerceTransactions)
-    transactions.push(WooCommerceTransactions.data)
+    console.log(transactionsPhase)
 
-    return transactions
+    const WooCommerceTransactionsRaw = await WooCommerce.get("orders",{per_page: ResultsLimit})
+    const WooCommerceTransactions = WooCommerceTransactionsRaw.data.map((order)=>{
+        return WoocommerceFormatter(order)
+    })
+
+    return WooCommerceTransactions.concat(...transactions)
 }
 
 function WoocommerceFormatter(WooCommerceData){
+    // console.log(WooCommerceData)
     const data = {
-        "id": 1,
-        "name": "t-shirts",
-        "type": "income",
+        "id": WooCommerceData.id,
+        "name": WooCommerceData.line_items.map((item)=>{return item.name}),
+        "type": WoocommerceTypeFormatter(WooCommerceData.type),
         "date": WooCommerceData.date_created_gmt,
-        "catagory": "overigekosten",
-        "vat": 21,
-        "price": 21.99,
+        "catagory": "order",
+        "vat": WooCommerceData.cart_tax,
+        "price": WooCommerceData.total,
         "provider": "woocommerce"
     }
     
     return data
+}
+
+function WoocommerceTypeFormatter(type){
+   if(type === "refunded"){
+       return "expense"
+   }else{
+       return "income"
+   }
 }
