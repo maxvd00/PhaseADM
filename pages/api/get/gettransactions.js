@@ -6,7 +6,6 @@ export default async function getTransactions(query){
 
     // phaseADM orders/database 
     let transactionsPhase = await mysql.query(`select * from transactions limit ${ResultsLimit}`)
-    transactionsPhase.push(transactionsPhase)
     transactionsPhase.forEach(element => {
         element.product = [element.product]
         element.provider = "PhaseADM"
@@ -18,7 +17,7 @@ export default async function getTransactions(query){
         return WoocommerceFormatter(order)
     })
 
-    return WooCommerceTransactions.concat(...transactions)
+    return WooCommerceTransactions.concat(...transactionsPhase)
 }
 
 function WoocommerceFormatter(WooCommerceData){
