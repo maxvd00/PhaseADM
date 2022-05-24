@@ -4,17 +4,15 @@ import WooCommerce from "../../../lib/woocomerce"
 export default async function getTransactions(query){
     const ResultsLimit = query.limit ? parseInt(query.limit) : 10
 
+    // phaseADM orders/database 
     let transactionsPhase = await mysql.query(`select * from transactions limit ${ResultsLimit}`)
-
     transactionsPhase.push(transactionsPhase)
-
     transactionsPhase.forEach(element => {
         element.product = [element.product]
         element.provider = "PhaseADM"
     });
 
-    console.log(transactionsPhase)
-
+    // Woocommerce orders
     const WooCommerceTransactionsRaw = await WooCommerce.get("orders",{per_page: ResultsLimit})
     const WooCommerceTransactions = WooCommerceTransactionsRaw.data.map((order)=>{
         return WoocommerceFormatter(order)
@@ -24,7 +22,6 @@ export default async function getTransactions(query){
 }
 
 function WoocommerceFormatter(WooCommerceData){
-    // console.log(WooCommerceData)
     const data = {
         "id": WooCommerceData.id,
         "name": WooCommerceData.line_items.map((item)=>{return item.name}),
