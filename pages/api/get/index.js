@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     'SELECT ROUND(SUM((SELECT SUM(prijs * -1) as prijs from transactions WHERE Type = "expenses" ) + (SELECT SUM(prijs) from transactions WHERE Type = "income" )),2) AS total'
   );
 
-  let data = {
+  const data = {
     transactions: await getTransactions(req.query),
     balance: balance[0].total
   }
