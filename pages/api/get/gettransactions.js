@@ -5,7 +5,7 @@ export default async function getTransactions(query){
     const ResultsLimit = query.limit ? parseInt(query.limit) : 10
 
     // phaseADM orders/database 
-    let transactionsPhase = await mysql.query(`select * from transactions limit ${ResultsLimit}`)
+    let transactionsPhase = await mysql.query(`select * from transactions WHERE active = true limit ${ResultsLimit}`)
     transactionsPhase.forEach(element => {
         element.product = [element.product]
         element.provider = "PhaseADM"
