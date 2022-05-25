@@ -3,7 +3,7 @@ import style from "./Tablehome.module.css";
 
 export default function Tablehome() {
   return (
-    <div class="p-4 max-w-md bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700 float-right top-36 right-0 absolute">
+    <div class="p-4 max-w-sm bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700 float-left top-0 right-0 ">
     <div class="flex justify-between items-center mb-4">
         <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Laatste ...</h5>
         <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
@@ -17,7 +17,7 @@ export default function Tablehome() {
                     
                     <div class="flex-1 min-w-0">
                         <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                            Krantenknipsel
+                            Krantenknipsel oeflhiwofhwergowhefwogihwoiehwgorhfewohoewghewoghweoghwegowehgwioheowih
                         </p>
                         <p class="text-sm text-gray-500 truncate dark:text-gray-400">
                             Max
