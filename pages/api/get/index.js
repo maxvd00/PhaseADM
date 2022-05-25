@@ -11,6 +11,6 @@ export default async function handler(req, res) {
     balance: balance[0].total
   }
 
-  res.status(200).send({data});
+  res.status(200).json(data);
 }
 
