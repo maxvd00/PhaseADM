@@ -13,11 +13,12 @@
   },
   "dependencies": {
     "@vlasky/mysql": "^2.18.5",
+    "@woocommerce/woocommerce-rest-api": "^1.0.1",
     "autoprefixer": "^10.4.7",
+    "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
     "chart.js": "^3.7.1",
     "components": "^0.1.0",
-    "@woocommerce/woocommerce-rest-api": "^1.0.1",
     "dotenv": "^16.0.1",
     "next": "12.1.6",
     "postcss": "^8.4.13",

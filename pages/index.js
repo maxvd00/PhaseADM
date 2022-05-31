@@ -6,6 +6,7 @@ import Kas from "../components/Widgets/kas";
 import Tablehome from "../components/Widgets/Tablehomepage";
 // import Cards from "../components/Widgets/Cards";
 import Test from "../components/Widgets/test";
+import Incometable from "./Incomepage";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       < Navbar /> 
       {/* < Kas /> */}
       < Test />
+      < Incometable />
       {/* < Tablehome /> */}
       {/* < Cards /> */}
       
