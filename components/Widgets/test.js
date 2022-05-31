@@ -1,8 +1,8 @@
 import Tablehome from "./Tablehomepage";
 import Grafic from "./Grafic/Graficcard";
 import Social from "./Social/Social";
-import Kanye from "../Kanye/Kanye";
-import KanyeApi from "../Kanye/KanyeApi";
+import Kanye from "./Kanye/Kanye";
+import KanyeApi from "./Kanye/KanyeApi";
 
 export default function Test() {
   return (
@@ -16,7 +16,7 @@ export default function Test() {
         <div className="rounded overflow-hidden">
           <Social />
         </div>
-        <div className="rounded overflow-hidden border-2">
+        <div className="rounded overflow-hidden">
          
           <Kanye />
 
