@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Axios from "axios";
+import { useState } from "react";
 
 export default function Kanye() {
-  const [quote, setQuote] = useState("");
+  const [quote, setQuote] = useState();
 
   const Getquote = () => {
     Axios.get("https://api.kanye.rest").then((response) => {
