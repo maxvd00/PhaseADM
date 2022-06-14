@@ -20,9 +20,6 @@ export default async function handler(req, res) {
     console.error(err);
   });
 
-  console.log(WooCommerceSales.data[0].total_sales);
-  console.log(`phase ${balance[0].total}`);
-
   const data = {
     balance: parseFloat(WooCommerceSales.data[0].total_sales) + parseFloat(balance[0].total),
     transactions: await getTransactions(req.query),
