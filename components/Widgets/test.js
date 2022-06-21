@@ -2,7 +2,7 @@ import Tablehome from "./Tablehomepage";
 import Grafic from "./Grafic/Graficcard";
 import Social from "./Social/Social";
 import Kanye from "./Kanye/Kanye";
-import KanyeApi from "./Kanye/KanyeApi";
+
 
 export default function Test() {
   return (

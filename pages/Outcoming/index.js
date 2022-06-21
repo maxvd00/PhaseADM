@@ -57,7 +57,7 @@ export default function Incometable() {
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                     Flower Tee
                 </th>
-                <td className="text-red-600 px-6 py-4">
+                <td className="text-green-600 px-6 py-4">
                     35,00
                 </td>
                 <td className="px-6 py-4">
@@ -86,7 +86,7 @@ export default function Incometable() {
                     Krantenknipsel
                 </th>
                 {/* prijs */}
-                <td className="text-red-600 px-6 py-4">
+                <td className="text-green-600 px-6 py-4">
                     25,00
                 </td>
                 {/* btw */}
@@ -116,7 +116,7 @@ export default function Incometable() {
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                     Melting world zwart
                 </th>
-                <td className="text-red-600 px-6 py-4">
+                <td className="text-green-600 px-6 py-4">
                     45,00
                 </td>
                 <td className="px-6 py-4">
@@ -138,4 +138,4 @@ export default function Incometable() {
 </div>
     </div>
   )
-}
+} 

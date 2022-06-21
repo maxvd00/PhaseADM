@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import Axios from "axios";
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+import React, { useState } from 'react';
+>>>>>>> a4b4e84 (auth)
 
 export default function Kanye() {
   const [quote, setQuote] = useState();
